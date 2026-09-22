@@ -1,0 +1,631 @@
+{
+  "baseline": "v0.1",
+  "archive_date": "2026-09-23",
+  "engine": "Cocos Creator 3.8.8",
+  "source_project": "Monopoly3D_v0.1_Core_Prototype",
+  "hash_algorithm": "SHA-256",
+  "project_files": [
+    {
+      "path": ".creator/asset-template/typescript/Custom Script Template Help Documentation.url",
+      "source_sha256": "d9195c36f763bcca97d0f6eef1b3c9632918c7e8279258758b421b19579fea4a",
+      "baseline_sha256": "d9195c36f763bcca97d0f6eef1b3c9632918c7e8279258758b421b19579fea4a",
+      "bytes": 107
+    },
+    {
+      "path": ".gitignore",
+      "source_sha256": "67d1bf5270ff8e6655818839339d3d311b52d6316d1f075859772510fed80517",
+      "baseline_sha256": "f1282fa2cec1856ef89c86b341f4568bc5f6047bf930e2fa76cfca3e67abfcea",
+      "bytes": 393
+    },
+    {
+      "path": "assets/materials/Mat_Player_Blue.mtl",
+      "source_sha256": "477c2e04d6746805a9e81f6a9078c8b6d9de48189b53a7a97127256bb47d8a67",
+      "baseline_sha256": "477c2e04d6746805a9e81f6a9078c8b6d9de48189b53a7a97127256bb47d8a67",
+      "bytes": 1417
+    },
+    {
+      "path": "assets/materials/Mat_Player_Blue.mtl.meta",
+      "source_sha256": "e250ec8b23ee80564f0c3071da8875ae9580fbc3e6edc3b40e899453ed56508e",
+      "baseline_sha256": "e250ec8b23ee80564f0c3071da8875ae9580fbc3e6edc3b40e899453ed56508e",
+      "bytes": 147
+    },
+    {
+      "path": "assets/materials/Mat_Player_Green.mtl",
+      "source_sha256": "6d7d38f677a6c9c7df6147abecffc438136ad46a7039d6b20efcf7df5ab4730e",
+      "baseline_sha256": "6d7d38f677a6c9c7df6147abecffc438136ad46a7039d6b20efcf7df5ab4730e",
+      "bytes": 1417
+    },
+    {
+      "path": "assets/materials/Mat_Player_Green.mtl.meta",
+      "source_sha256": "11a984e4d11ae29fc6f2a6c7f5c629bc4fb31443da267ec7fd6ab0a4f0299b62",
+      "baseline_sha256": "11a984e4d11ae29fc6f2a6c7f5c629bc4fb31443da267ec7fd6ab0a4f0299b62",
+      "bytes": 147
+    },
+    {
+      "path": "assets/materials/Mat_Player_Red.mtl",
+      "source_sha256": "eb224f8ab059c2068f3aeca0691e3842ca7980def015775c841c9b0b7b4f6ff6",
+      "baseline_sha256": "eb224f8ab059c2068f3aeca0691e3842ca7980def015775c841c9b0b7b4f6ff6",
+      "bytes": 1416
+    },
+    {
+      "path": "assets/materials/Mat_Player_Red.mtl.meta",
+      "source_sha256": "1bb10ba081d38a66fb05a59d55972bb1a629da84ad7fd620a3c7608c7a0d6558",
+      "baseline_sha256": "1bb10ba081d38a66fb05a59d55972bb1a629da84ad7fd620a3c7608c7a0d6558",
+      "bytes": 184
+    },
+    {
+      "path": "assets/materials/Mat_Player_Yellow.mtl",
+      "source_sha256": "85e3d7250a8a52bbdaccff52e3ab1b3761e5ade11ce6b48ca283b7e0e75365c5",
+      "baseline_sha256": "85e3d7250a8a52bbdaccff52e3ab1b3761e5ade11ce6b48ca283b7e0e75365c5",
+      "bytes": 1417
+    },
+    {
+      "path": "assets/materials/Mat_Player_Yellow.mtl.meta",
+      "source_sha256": "0eb99c8ad94c38d2a626ec413d1fba46b0d3d45c95b2e69c0b6db857343d584c",
+      "baseline_sha256": "0eb99c8ad94c38d2a626ec413d1fba46b0d3d45c95b2e69c0b6db857343d584c",
+      "bytes": 147
+    },
+    {
+      "path": "assets/materials.meta",
+      "source_sha256": "4931ee07f4fd7f354a8d4a7982427f9c5bcf5046d8762399c2273b62f067aadd",
+      "baseline_sha256": "4931ee07f4fd7f354a8d4a7982427f9c5bcf5046d8762399c2273b62f067aadd",
+      "bytes": 169
+    },
+    {
+      "path": "assets/prefabs.meta",
+      "source_sha256": "8713b934a10b2f70257a79332c95855e9ef06299681748522cdcbd04f8907dc9",
+      "baseline_sha256": "8713b934a10b2f70257a79332c95855e9ef06299681748522cdcbd04f8907dc9",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scenes/Main.scene",
+      "source_sha256": "837710cd53e9de348fd090e5be1e650d8d54229a56f2b94baced273a33a2d231",
+      "baseline_sha256": "837710cd53e9de348fd090e5be1e650d8d54229a56f2b94baced273a33a2d231",
+      "bytes": 106109
+    },
+    {
+      "path": "assets/scenes/Main.scene.meta",
+      "source_sha256": "c0671092ee25b95a7c3daec7238136c068fe719ecf7000bb9ec1fabe00cf1454",
+      "baseline_sha256": "c0671092ee25b95a7c3daec7238136c068fe719ecf7000bb9ec1fabe00cf1454",
+      "bytes": 181
+    },
+    {
+      "path": "assets/scenes.meta",
+      "source_sha256": "7161e560863b43e24a496e40fb6546789d4272d8ef2c08cf13b11a17c30148f1",
+      "baseline_sha256": "7161e560863b43e24a496e40fb6546789d4272d8ef2c08cf13b11a17c30148f1",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts/board/BoardManager.ts",
+      "source_sha256": "58693278126580df5bcb013e8d99955a86ab2ad047c5473268530e4411fc546f",
+      "baseline_sha256": "58693278126580df5bcb013e8d99955a86ab2ad047c5473268530e4411fc546f",
+      "bytes": 704
+    },
+    {
+      "path": "assets/scripts/board/BoardManager.ts.meta",
+      "source_sha256": "f8c4526f86d3b2e86868e6df2bd5ec3a37cc098d2d5bbe3b46d7c43eecbfcc8b",
+      "baseline_sha256": "f8c4526f86d3b2e86868e6df2bd5ec3a37cc098d2d5bbe3b46d7c43eecbfcc8b",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/board.meta",
+      "source_sha256": "70fa7efd678606e1e16ebba349e567fd6b5d50a638fba521a441fd5b511a9c98",
+      "baseline_sha256": "70fa7efd678606e1e16ebba349e567fd6b5d50a638fba521a441fd5b511a9c98",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts/chance/ChanceCardData.ts",
+      "source_sha256": "43e78b713be8df98e7bc965790db70397082d5048d70a10f73401d850e1810ce",
+      "baseline_sha256": "43e78b713be8df98e7bc965790db70397082d5048d70a10f73401d850e1810ce",
+      "bytes": 223
+    },
+    {
+      "path": "assets/scripts/chance/ChanceCardData.ts.meta",
+      "source_sha256": "cfe9a7f2dd4ee4008d54a3a929a3ebd6c0bdf11e150524e8260ad5d6fc425743",
+      "baseline_sha256": "cfe9a7f2dd4ee4008d54a3a929a3ebd6c0bdf11e150524e8260ad5d6fc425743",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/chance/ChanceCardDatabase.ts",
+      "source_sha256": "0c0adafe78770302a2a6f9e6f74f0d095527ab1528fafa14f4705ba3827c14f3",
+      "baseline_sha256": "0c0adafe78770302a2a6f9e6f74f0d095527ab1528fafa14f4705ba3827c14f3",
+      "bytes": 1126
+    },
+    {
+      "path": "assets/scripts/chance/ChanceCardDatabase.ts.meta",
+      "source_sha256": "dfb581f7e7a898fb8bdc6076e1313d0e0c9ac9d9d618a5350a8982a1a2a5fee7",
+      "baseline_sha256": "dfb581f7e7a898fb8bdc6076e1313d0e0c9ac9d9d618a5350a8982a1a2a5fee7",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/chance/ChanceCardType.ts",
+      "source_sha256": "e6d2f51cc8698f46da712ae36c921320720fe9e8624c7efffbcdcc7f9be9caa2",
+      "baseline_sha256": "e6d2f51cc8698f46da712ae36c921320720fe9e8624c7efffbcdcc7f9be9caa2",
+      "bytes": 111
+    },
+    {
+      "path": "assets/scripts/chance/ChanceCardType.ts.meta",
+      "source_sha256": "f4184257f9486677b920e74b17340e747a2a256f24458c02ec94d4d9c0a410d9",
+      "baseline_sha256": "f4184257f9486677b920e74b17340e747a2a256f24458c02ec94d4d9c0a410d9",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/chance.meta",
+      "source_sha256": "7a4668e3258271d2c072b3c2ab0262d90b97c42690fb0b6f0d8c6b46e541ab34",
+      "baseline_sha256": "7a4668e3258271d2c072b3c2ab0262d90b97c42690fb0b6f0d8c6b46e541ab34",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts/core/GameManager.ts",
+      "source_sha256": "fdef45080afe3855342d91626366f25bb6eef62851df47dc92709fed65cccb53",
+      "baseline_sha256": "fdef45080afe3855342d91626366f25bb6eef62851df47dc92709fed65cccb53",
+      "bytes": 33222
+    },
+    {
+      "path": "assets/scripts/core/GameManager.ts.meta",
+      "source_sha256": "3113ea9997f29e966b538dcf80c36fd2735f86b77d6547db65658fc84dbfe18e",
+      "baseline_sha256": "3113ea9997f29e966b538dcf80c36fd2735f86b77d6547db65658fc84dbfe18e",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/core/TurnManager.ts",
+      "source_sha256": "705f5db55af933368b7afc1243798d72727a27e2540eb58bfe641f14f280cbff",
+      "baseline_sha256": "705f5db55af933368b7afc1243798d72727a27e2540eb58bfe641f14f280cbff",
+      "bytes": 2538
+    },
+    {
+      "path": "assets/scripts/core/TurnManager.ts.meta",
+      "source_sha256": "ae8fa51288ee42eb37f819c2a1369ccbaca63237481b41c508c82be087632e6c",
+      "baseline_sha256": "ae8fa51288ee42eb37f819c2a1369ccbaca63237481b41c508c82be087632e6c",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/core.meta",
+      "source_sha256": "aaf54b447d5d2b5d1458077343efe4684bd428f1de193b0d71f11fcd52801bcc",
+      "baseline_sha256": "aaf54b447d5d2b5d1458077343efe4684bd428f1de193b0d71f11fcd52801bcc",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts/destiny/DestinyCardData.ts",
+      "source_sha256": "0fa3434148b5917029a473535344d2fb49bba136a387df9d83e6286714992d0f",
+      "baseline_sha256": "0fa3434148b5917029a473535344d2fb49bba136a387df9d83e6286714992d0f",
+      "bytes": 230
+    },
+    {
+      "path": "assets/scripts/destiny/DestinyCardData.ts.meta",
+      "source_sha256": "7c8aa5c5723214c393bfc8612bfd0654e5b32f2be1985eed35e4b3e3a5d0ddb6",
+      "baseline_sha256": "7c8aa5c5723214c393bfc8612bfd0654e5b32f2be1985eed35e4b3e3a5d0ddb6",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/destiny/DestinyCardDatabase.ts",
+      "source_sha256": "dba13b220d6b00a5948e281d00e41b3e8eec0f68c4ba7270850c72854d6ea5b2",
+      "baseline_sha256": "dba13b220d6b00a5948e281d00e41b3e8eec0f68c4ba7270850c72854d6ea5b2",
+      "bytes": 1344
+    },
+    {
+      "path": "assets/scripts/destiny/DestinyCardDatabase.ts.meta",
+      "source_sha256": "176b75629097e5cce19762c439a0b5d7fcca08fa42dbc1b190e666e6dec5361a",
+      "baseline_sha256": "176b75629097e5cce19762c439a0b5d7fcca08fa42dbc1b190e666e6dec5361a",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/destiny/DestinyCardType.ts",
+      "source_sha256": "e88edafe04fe18b20f31d5f1949f2c966b5810f718c0724899360b08e9afe005",
+      "baseline_sha256": "e88edafe04fe18b20f31d5f1949f2c966b5810f718c0724899360b08e9afe005",
+      "bytes": 113
+    },
+    {
+      "path": "assets/scripts/destiny/DestinyCardType.ts.meta",
+      "source_sha256": "2b00d6169b80e7fbf4a2a063731c018788292c98f14d286e16036de1c8ec73f4",
+      "baseline_sha256": "2b00d6169b80e7fbf4a2a063731c018788292c98f14d286e16036de1c8ec73f4",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/destiny.meta",
+      "source_sha256": "02d5e49ee74f02eee16f2401c584e0fcaede5bf856702617b02d009d21597622",
+      "baseline_sha256": "02d5e49ee74f02eee16f2401c584e0fcaede5bf856702617b02d009d21597622",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts/dice/DiceSystem.ts",
+      "source_sha256": "8fbe7e050774c446abf2b699ffdb0b0d4682c3282800594c8935c434164bdf85",
+      "baseline_sha256": "8fbe7e050774c446abf2b699ffdb0b0d4682c3282800594c8935c434164bdf85",
+      "bytes": 600
+    },
+    {
+      "path": "assets/scripts/dice/DiceSystem.ts.meta",
+      "source_sha256": "608612b06a52a4b8fbfbff039509b1ebdfda08bf64e223190aa453bce52c915c",
+      "baseline_sha256": "608612b06a52a4b8fbfbff039509b1ebdfda08bf64e223190aa453bce52c915c",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/dice.meta",
+      "source_sha256": "44a3bff4480550431a1d04d931c5589d0e48ee30bbc84c310972c7677c8bc442",
+      "baseline_sha256": "44a3bff4480550431a1d04d931c5589d0e48ee30bbc84c310972c7677c8bc442",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts/economy/EconomySystem.ts",
+      "source_sha256": "f18657df6246534ba96fa9a509d990d6380dd6ecea855cf78f8eed81fe8110ed",
+      "baseline_sha256": "f18657df6246534ba96fa9a509d990d6380dd6ecea855cf78f8eed81fe8110ed",
+      "bytes": 2508
+    },
+    {
+      "path": "assets/scripts/economy/EconomySystem.ts.meta",
+      "source_sha256": "33ac97408988ca759ff6b15378de13487a27a6a0ca3e713e3add9b591598211c",
+      "baseline_sha256": "33ac97408988ca759ff6b15378de13487a27a6a0ca3e713e3add9b591598211c",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/economy.meta",
+      "source_sha256": "5ccad370a293433d526f7397a4aec04b1acd3cecfd247bec1f433dc0d03e5c52",
+      "baseline_sha256": "5ccad370a293433d526f7397a4aec04b1acd3cecfd247bec1f433dc0d03e5c52",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts/jail/PlayerJailData.ts",
+      "source_sha256": "66f7a26b9db054e42ab1761a82e2f374b21be900da440a63780718481bb9637c",
+      "baseline_sha256": "66f7a26b9db054e42ab1761a82e2f374b21be900da440a63780718481bb9637c",
+      "bytes": 589
+    },
+    {
+      "path": "assets/scripts/jail/PlayerJailData.ts.meta",
+      "source_sha256": "e27c61842bb1c04bce1f5c6034fded8b77f4262e125c0ba84cf3d51ab0bb2a56",
+      "baseline_sha256": "e27c61842bb1c04bce1f5c6034fded8b77f4262e125c0ba84cf3d51ab0bb2a56",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/jail.meta",
+      "source_sha256": "f581711b305feb46f7647fd9703cc3251568db37ee89e12a9b1c57e302d8083b",
+      "baseline_sha256": "f581711b305feb46f7647fd9703cc3251568db37ee89e12a9b1c57e302d8083b",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts/player/PlayerController.ts",
+      "source_sha256": "9350cc7a55aa14cfe4952074ab45eab8d576b7fb551099b1d079d948f8d0e062",
+      "baseline_sha256": "9350cc7a55aa14cfe4952074ab45eab8d576b7fb551099b1d079d948f8d0e062",
+      "bytes": 14053
+    },
+    {
+      "path": "assets/scripts/player/PlayerController.ts.meta",
+      "source_sha256": "e18eb555174c671fa53392eb563109038466a7d3f04ace5ed9902e379e47855e",
+      "baseline_sha256": "e18eb555174c671fa53392eb563109038466a7d3f04ace5ed9902e379e47855e",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/player/PlayerEconomyData.ts",
+      "source_sha256": "af968339676ed9c835d4e6d3dd2bf26edc5fea01e4bc78afb063f1da24747adf",
+      "baseline_sha256": "af968339676ed9c835d4e6d3dd2bf26edc5fea01e4bc78afb063f1da24747adf",
+      "bytes": 548
+    },
+    {
+      "path": "assets/scripts/player/PlayerEconomyData.ts.meta",
+      "source_sha256": "4b29bb04e1b25fded0ab3639347ade4c096a04efa9b95bdde9f14e8cf26aefb0",
+      "baseline_sha256": "4b29bb04e1b25fded0ab3639347ade4c096a04efa9b95bdde9f14e8cf26aefb0",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/player.meta",
+      "source_sha256": "ba7eed505b5497ed627c4abeb699a5bf591c1f630065a5bd32371992b210308f",
+      "baseline_sha256": "ba7eed505b5497ed627c4abeb699a5bf591c1f630065a5bd32371992b210308f",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts/tile/SpecialType.ts",
+      "source_sha256": "7187fec57c6492478393bbb405a592c168900db25f113a74d35977afaeda9c2c",
+      "baseline_sha256": "7187fec57c6492478393bbb405a592c168900db25f113a74d35977afaeda9c2c",
+      "bytes": 58
+    },
+    {
+      "path": "assets/scripts/tile/SpecialType.ts.meta",
+      "source_sha256": "72089b5c7a954ff76ce76affe5265398c96da648c7dcebb56a000ed03869123d",
+      "baseline_sha256": "72089b5c7a954ff76ce76affe5265398c96da648c7dcebb56a000ed03869123d",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/tile/TileData.ts",
+      "source_sha256": "e8e66119d78a67e0469d4056770772a728e97eb00af00356b339bbc6c50c77b4",
+      "baseline_sha256": "e8e66119d78a67e0469d4056770772a728e97eb00af00356b339bbc6c50c77b4",
+      "bytes": 394
+    },
+    {
+      "path": "assets/scripts/tile/TileData.ts.meta",
+      "source_sha256": "0cf8022a0d35a30b2b55e0b3e084df252eed98ae5b00b81ca59cf573e3f75034",
+      "baseline_sha256": "0cf8022a0d35a30b2b55e0b3e084df252eed98ae5b00b81ca59cf573e3f75034",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/tile/TileDatabase.ts",
+      "source_sha256": "68e7db2bfeb5353c77850f6a429799eedd8b0312327f24b81c3e565f2658eecc",
+      "baseline_sha256": "68e7db2bfeb5353c77850f6a429799eedd8b0312327f24b81c3e565f2658eecc",
+      "bytes": 1125
+    },
+    {
+      "path": "assets/scripts/tile/TileDatabase.ts.meta",
+      "source_sha256": "fc0ab3d43a731fe50a79e6fd282c2bc4d66aa292d37b64557107559de3939ace",
+      "baseline_sha256": "fc0ab3d43a731fe50a79e6fd282c2bc4d66aa292d37b64557107559de3939ace",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/tile/TileSystem.ts",
+      "source_sha256": "42b7a9d2c899a7102facea1c0de5fa5c276153a4f5cd6d1fc67d7cea89d92138",
+      "baseline_sha256": "42b7a9d2c899a7102facea1c0de5fa5c276153a4f5cd6d1fc67d7cea89d92138",
+      "bytes": 37380
+    },
+    {
+      "path": "assets/scripts/tile/TileSystem.ts.meta",
+      "source_sha256": "cfce282792dfbff338eafcaee0897a7a4dc1f0fd0961ead4204083cb47d09edd",
+      "baseline_sha256": "cfce282792dfbff338eafcaee0897a7a4dc1f0fd0961ead4204083cb47d09edd",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/tile/TileType.ts",
+      "source_sha256": "6ad0848c86d0d0db7a819fcbb298b498cf3ccef6fad40a47445c7d0e4d2a2752",
+      "baseline_sha256": "6ad0848c86d0d0db7a819fcbb298b498cf3ccef6fad40a47445c7d0e4d2a2752",
+      "bytes": 246
+    },
+    {
+      "path": "assets/scripts/tile/TileType.ts.meta",
+      "source_sha256": "6fa71104fb08a9d22ca4b7089234cca2264d274382d77d63c3223c8e479f2050",
+      "baseline_sha256": "6fa71104fb08a9d22ca4b7089234cca2264d274382d77d63c3223c8e479f2050",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/tile.meta",
+      "source_sha256": "6f2b4f36ad80e14248ff1d63aa24f920762d475fc1f88dc4c3acd7a1547c1136",
+      "baseline_sha256": "6f2b4f36ad80e14248ff1d63aa24f920762d475fc1f88dc4c3acd7a1547c1136",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts/ui/PropertyPurchaseUI.ts",
+      "source_sha256": "2fb314c9db9754afc0ebcbd42fc53b99bb5885638df44b49465b50d7b9c0827f",
+      "baseline_sha256": "2fb314c9db9754afc0ebcbd42fc53b99bb5885638df44b49465b50d7b9c0827f",
+      "bytes": 1170
+    },
+    {
+      "path": "assets/scripts/ui/PropertyPurchaseUI.ts.meta",
+      "source_sha256": "05cfce3546a7f0fdddc20e225d1a9d03600ceb9ccc9bb643c34baf91ea28694d",
+      "baseline_sha256": "05cfce3546a7f0fdddc20e225d1a9d03600ceb9ccc9bb643c34baf91ea28694d",
+      "bytes": 171
+    },
+    {
+      "path": "assets/scripts/ui.meta",
+      "source_sha256": "db0089c14fc2925a0120e87dbc56dac9d95b620214838c9ba4f3b9abc3782ea6",
+      "baseline_sha256": "db0089c14fc2925a0120e87dbc56dac9d95b620214838c9ba4f3b9abc3782ea6",
+      "bytes": 169
+    },
+    {
+      "path": "assets/scripts.meta",
+      "source_sha256": "fc8117f625cb6a27f7cefddb4953b661dd52af1c3e4e45c99c0fee49eb4b5462",
+      "baseline_sha256": "fc8117f625cb6a27f7cefddb4953b661dd52af1c3e4e45c99c0fee49eb4b5462",
+      "bytes": 169
+    },
+    {
+      "path": "package.json",
+      "source_sha256": "f80ad4786fc7d99646d4a593d014356e6dc47c269a74b3df0e3ca14370b622de",
+      "baseline_sha256": "f80ad4786fc7d99646d4a593d014356e6dc47c269a74b3df0e3ca14370b622de",
+      "bytes": 140
+    },
+    {
+      "path": "settings/v2/packages/builder.json",
+      "source_sha256": "a3e1a8df580b6ebec15ad16c9bbef785806567bfbc093821852bb3606028e702",
+      "baseline_sha256": "a3e1a8df580b6ebec15ad16c9bbef785806567bfbc093821852bb3606028e702",
+      "bytes": 29
+    },
+    {
+      "path": "settings/v2/packages/cocos-service.json",
+      "source_sha256": "b4b47275e8d439d26543b792cefbf750fc99a44c33724c392b08b11c8a0a099b",
+      "baseline_sha256": "b4b47275e8d439d26543b792cefbf750fc99a44c33724c392b08b11c8a0a099b",
+      "bytes": 374
+    },
+    {
+      "path": "settings/v2/packages/device.json",
+      "source_sha256": "93af91e0b90038cedc84d08651f845e1c2e2ae460321c19f083c27a178e451f8",
+      "baseline_sha256": "93af91e0b90038cedc84d08651f845e1c2e2ae460321c19f083c27a178e451f8",
+      "bytes": 29
+    },
+    {
+      "path": "settings/v2/packages/engine.json",
+      "source_sha256": "e3755683f34745346f06b4dd665d172252183004e1aa50f90ca579837c2f244f",
+      "baseline_sha256": "e3755683f34745346f06b4dd665d172252183004e1aa50f90ca579837c2f244f",
+      "bytes": 30
+    },
+    {
+      "path": "settings/v2/packages/information.json",
+      "source_sha256": "aa923ac399e160346cb48bdd19ec59b7fbbdd0f628c180f7f018983af8af4233",
+      "baseline_sha256": "aa923ac399e160346cb48bdd19ec59b7fbbdd0f628c180f7f018983af8af4233",
+      "bytes": 588
+    },
+    {
+      "path": "settings/v2/packages/program.json",
+      "source_sha256": "d914f9f19ffe02724337936d8c7907798c8666566902b78243eb1aa8da0baedd",
+      "baseline_sha256": "d914f9f19ffe02724337936d8c7907798c8666566902b78243eb1aa8da0baedd",
+      "bytes": 29
+    },
+    {
+      "path": "settings/v2/packages/project.json",
+      "source_sha256": "86e60258fc615fe023aef88ff8d66f6e8cf0c784fcef5c02d75b08a42b204241",
+      "baseline_sha256": "86e60258fc615fe023aef88ff8d66f6e8cf0c784fcef5c02d75b08a42b204241",
+      "bytes": 29
+    },
+    {
+      "path": "tsconfig.json",
+      "source_sha256": "5b905d615fb49c5214cb704126fd885f1f1c1f17f23426b084f32c7881b640fc",
+      "baseline_sha256": "5b905d615fb49c5214cb704126fd885f1f1c1f17f23426b084f32c7881b640fc",
+      "bytes": 191
+    }
+  ],
+  "reference_documents": [
+    {
+      "source_filename": "Monopoly3D_Jail_NewChat_Prompt.md",
+      "path": "docs/history/Monopoly3D_Jail_NewChat_Prompt.md",
+      "sha256": "fc63744c57ce381c2008fa8d4254adf39564e7a26625e4b99841d700c6f0d77f",
+      "bytes": 3475
+    },
+    {
+      "source_filename": "Monopoly3D_NewChat_Prompt.md",
+      "path": "docs/history/Monopoly3D_NewChat_Prompt.md",
+      "sha256": "ef18a38c060c57b3735f569db043e0541f512f16b1728edee313f4145e946c50",
+      "bytes": 2553
+    },
+    {
+      "source_filename": "Monopoly3D_RentSystem_NewChat_Prompt.md",
+      "path": "docs/history/Monopoly3D_RentSystem_NewChat_Prompt.md",
+      "sha256": "30612481566bcaf9bac6cfcc6f324f2af9e25f1d71a80a9445d3c22a6825e858",
+      "bytes": 2626
+    },
+    {
+      "source_filename": "Monopoly3D_Special_NewChat_Prompt.md",
+      "path": "docs/history/Monopoly3D_Special_NewChat_Prompt.md",
+      "sha256": "83e3daef014b725addb806cdea7bcdbd0a3b2c019a0b41e734cb038580c79059",
+      "bytes": 2965
+    },
+    {
+      "source_filename": "Monopoly3D_StartTax_NewChat_Prompt.md",
+      "path": "docs/history/Monopoly3D_StartTax_NewChat_Prompt.md",
+      "sha256": "4edace71d07a0ed63642a1fb93a8272fd0c7ff11d709d4ab730d6972df09784e",
+      "bytes": 3466
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_Chance_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_Chance_Handoff.md",
+      "sha256": "06f87e7f74e3bedcd29280be1b16fedab2ac9fca2b4268438024381274efb1f5",
+      "bytes": 15193
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_Destiny_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_Destiny_Handoff.md",
+      "sha256": "d844760f3c7467287be2beffd18651aa073253b021c358f1f63199f6e06a2072",
+      "bytes": 17448
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_Economy_Property_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_Economy_Property_Handoff.md",
+      "sha256": "bd9880a04e2a196534d4d8c154d2e759853708911005388890bee80264c71de3",
+      "bytes": 22161
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_FreeParking_Handoff.md",
+      "path": "docs/Monopoly3D_v0.1_FreeParking_Handoff.md",
+      "sha256": "97c9e14df2b77a2ab66a34a77ca71651dcc8893cc780ba688d12a3b555fe32d5",
+      "bytes": 16371
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_GoToJail_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_GoToJail_Handoff.md",
+      "sha256": "a4e3754c8926c1eb42c16a47b6e70bcb95e4ac658f2dfda3b9d8d2a5a037e05e",
+      "bytes": 14663
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_Jail_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_Jail_Handoff.md",
+      "sha256": "128539a9ac284b5931bfc96395d909677493f6e03c360185baca8f35fed59d87",
+      "bytes": 10769
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_PropertyPurchase_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_PropertyPurchase_Handoff.md",
+      "sha256": "4b22bfb8c30b8cb83c3c2ba0f8ea8af8b197c14333d59223780c0ab4f0c86d02",
+      "bytes": 26553
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_RentSystem_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_RentSystem_Handoff.md",
+      "sha256": "96c0eb106b91471d06df9114af5169733327c2a078b3f35a02852263cb5f0f80",
+      "bytes": 19517
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_Special_Airport_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_Special_Airport_Handoff.md",
+      "sha256": "de5da86c923023bf881698a10aa14550bcd634b2275b8ec11db6eb52fbc08367",
+      "bytes": 18748
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_StartTax_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_StartTax_Handoff.md",
+      "sha256": "840a9e69ae16da69ce54125d2dee7eb53d7db0b79ba0d501abc48bf4c008f269",
+      "bytes": 10797
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_TileSystem_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_TileSystem_Handoff.md",
+      "sha256": "dfac383cb72f1207f0f6fd53360da42b3483c8b57f99c7a098975e671d6c6606",
+      "bytes": 14381
+    },
+    {
+      "source_filename": "Monopoly3D_v0.1_TurnManager_Handoff.md",
+      "path": "docs/history/Monopoly3D_v0.1_TurnManager_Handoff.md",
+      "sha256": "a4978933b6169bb88bf38efae431b2009b77f48827946476c042d7a2a8f294fe",
+      "bytes": 16588
+    },
+    {
+      "source_filename": "WeChat_Monopoly3D_Cocos_Beginner_Roadmap.md",
+      "path": "docs/roadmap/WeChat_Monopoly3D_Cocos_Beginner_Roadmap.md",
+      "sha256": "e20320915bf699f6a143afb75210e66d45c4f66874d9da58ab56ffd89ca5d2a5",
+      "bytes": 33204
+    }
+  ],
+  "added_asset_placeholders": [
+    "assets/prefabs/.gitkeep"
+  ],
+  "intentional_project_file_changes": {
+    ".gitignore": "Append .DS_Store ignore rule and final newline only."
+  },
+  "excluded_generated_paths": [
+    ".idea",
+    ".vscode",
+    "build",
+    "library",
+    "local",
+    "node_modules",
+    "profiles",
+    "temp",
+    ".DS_Store"
+  ],
+  "validation": {
+    "unchanged_original_project_files": 74,
+    "typescript_files": 20,
+    "json_files_parsed": 52,
+    "asset_meta_files": 39,
+    "missing_meta_files": [],
+    "orphan_meta_files": [],
+    "missing_relative_imports": [],
+    "external_imports": [
+      "cc"
+    ],
+    "scene_custom_component_instances": 19,
+    "unknown_scene_components": [],
+    "ordered_board_tiles": [
+      "Tile_00",
+      "Tile_01",
+      "Tile_02",
+      "Tile_03",
+      "Tile_04",
+      "Tile_05",
+      "Tile_06",
+      "Tile_07",
+      "Tile_08"
+    ],
+    "players": [
+      "Player_1",
+      "Player_2",
+      "Player_3",
+      "Player_4"
+    ],
+    "unresolved_asset_references": [],
+    "builtin_asset_references": {
+      "1263d74c-8167-4928-91a6-4e2672411f47@801ec": "primitives.fbx.meta",
+      "1263d74c-8167-4928-91a6-4e2672411f47@a804a": "primitives.fbx.meta",
+      "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941": "default_ui/default_btn_normal.png.meta",
+      "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941": "default_ui/default_btn_pressed.png.meta",
+      "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941": "default_ui/default_sprite.png.meta",
+      "620b6bf3-0369-4560-837f-2a2c00b73c26": "default_materials/standard-material.mtl.meta",
+      "6f01cf7f-81bf-4a7e-bd5d-0afc19696480@b47c0": "default_skybox/default_skybox.png.meta",
+      "951249e0-9f16-456d-8b85-a6ca954da16b@f9941": "default_ui/default_btn_disabled.png.meta",
+      "c8f66d17-351a-48da-a12c-0212d28575c4": "effects/builtin-standard.effect.meta",
+      "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0": "default_skybox/default_skybox.hdr.meta"
+    },
+    "runtime_retested_during_archiving": false
+  }
+}
