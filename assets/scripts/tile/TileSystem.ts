@@ -546,6 +546,88 @@ export class TileSystem extends Component {
                 return false;
             }
 
+            if (
+                drawnCard.type === DestinyCardType.COLLECT_FROM_OTHERS ||
+                drawnCard.type === DestinyCardType.PAY_OTHERS ||
+                drawnCard.type === DestinyCardType.ALL_GAIN ||
+                drawnCard.type === DestinyCardType.ALL_LOSS
+            ) {
+
+                const amount = drawnCard.amount;
+                const currentPlayerData = player.getComponent(PlayerEconomyData);
+
+                if (!amount || amount <= 0 || !currentPlayerData || !this.economySystem) {
+                    console.error(`[DestinySystem] ${drawnCard.title} cannot settle without an amount, player, and EconomySystem.`);
+                    return false;
+                }
+
+                const participants = this.economySystem.players.filter(entry => !!entry);
+                const playerIds = participants.map(entry => entry.playerId);
+
+                if (
+                    participants.length !== 4 ||
+                    new Set(playerIds).size !== 4 ||
+                    !playerIds.includes(currentPlayerData.playerId)
+                ) {
+                    console.error('[DestinySystem] A multiplayer card requires four distinct registered players.');
+                    return false;
+                }
+
+                const otherPlayerIds = playerIds.filter(id => id !== currentPlayerData.playerId);
+
+                if (drawnCard.type === DestinyCardType.COLLECT_FROM_OTHERS) {
+                    for (const id of otherPlayerIds) {
+                        this.economySystem.removeMoney(id, amount);
+                    }
+                    this.economySystem.addMoney(currentPlayerData.playerId, amount * otherPlayerIds.length);
+                } else if (drawnCard.type === DestinyCardType.PAY_OTHERS) {
+                    this.economySystem.removeMoney(currentPlayerData.playerId, amount * otherPlayerIds.length);
+                    for (const id of otherPlayerIds) {
+                        this.economySystem.addMoney(id, amount);
+                    }
+                } else {
+                    for (const id of playerIds) {
+                        if (drawnCard.type === DestinyCardType.ALL_GAIN) {
+                            this.economySystem.addMoney(id, amount);
+                        } else {
+                            this.economySystem.removeMoney(id, amount);
+                        }
+                    }
+                }
+
+                console.log(`[DestinySystem] MULTIPLAYER EFFECT APPLIED: ${drawnCard.title}.`);
+                return false;
+            }
+
+            if (drawnCard.type === DestinyCardType.GO_TO_JAIL) {
+                const jailTileIndex = TILE_DATABASE.findIndex(tile => tile.type === TileType.JAIL);
+
+                if (jailTileIndex < 0) {
+                    console.error('[DestinySystem] Go To Jail has no JAIL tile.');
+                    return false;
+                }
+
+                this.pendingGoToJailTargetTileIndex = jailTileIndex;
+                console.log(`[DestinySystem] GO_TO_JAIL forced move queued: ${player.node.name} -> Tile_${jailTileIndex.toString().padStart(2, '0')}.`);
+                return false;
+            }
+
+            if (drawnCard.type === DestinyCardType.RETURN_TO_START) {
+                const startTileIndex = TILE_DATABASE.findIndex(tile => tile.type === TileType.START);
+                const moveSteps = (startTileIndex - tileIndex + TILE_DATABASE.length) % TILE_DATABASE.length;
+
+                if (startTileIndex < 0 || moveSteps === 0) {
+                    console.error('[DestinySystem] Return To START has no valid forward route.');
+                    return false;
+                }
+
+                // A forward card move lands on START, so PlayerController gives
+                // the existing 2000 reward exactly once on the final step.
+                this.pendingDestinyMoveSteps = moveSteps;
+                console.log(`[DestinySystem] RETURN TO START queued: ${player.node.name} will move ${moveSteps} tiles forward and receive the START landing reward.`);
+                return false;
+            }
+
             // ---------------------------------------------
             // MOVE — DESTINY Step 4B
             // Positive and negative Destiny MOVE are both queued.
