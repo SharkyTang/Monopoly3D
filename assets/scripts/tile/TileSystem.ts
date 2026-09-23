@@ -305,6 +305,46 @@ export class TileSystem extends Component {
                 return false;
             }
 
+            if (
+                drawnCard.type ===
+                ChanceCardType.MOVE_TO_NEXT_AIRPORT
+            ) {
+
+                const airportIndices = TILE_DATABASE
+                    .filter(tile =>
+                        tile.type === TileType.SPECIAL &&
+                        tile.specialType === SpecialType.TRANSPORT
+                    )
+                    .map(tile => tile.id)
+                    .sort((a, b) => a - b);
+
+                const nextAirportIndex =
+                    airportIndices.find(index => index > tileIndex) ??
+                    airportIndices[0];
+
+                if (nextAirportIndex === undefined) {
+                    console.error('[ChanceSystem] No Airport destination is configured.');
+                    return false;
+                }
+
+                const moveSteps =
+                    (nextAirportIndex - tileIndex + TILE_DATABASE.length) %
+                    TILE_DATABASE.length;
+
+                if (moveSteps === 0) {
+                    console.error('[ChanceSystem] Next Airport move has zero steps.');
+                    return false;
+                }
+
+                this.pendingChanceMoveSteps = moveSteps;
+
+                console.log(
+                    `[ChanceSystem] AIRPORT TRANSFER queued: ${player.node.name} will move ${moveSteps} tiles to Tile_${nextAirportIndex.toString().padStart(2, '0')}.`
+                );
+
+                return false;
+            }
+
             console.log(
                 `[ChanceSystem] ${drawnCard.type} effect not executed yet.`
             );

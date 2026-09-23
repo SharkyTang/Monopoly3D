@@ -33,6 +33,8 @@ const { ccclass, property } = _decorator;
 @ccclass('GameManager')
 export class GameManager extends Component {
 
+    private static readonly MAX_FOLLOW_UP_CARD_MOVES = 12;
+
     @property(DiceSystem)
     diceSystem: DiceSystem | null = null;
 
@@ -343,6 +345,13 @@ export class GameManager extends Component {
                                 return;
                             }
 
+                            if (this.continuePendingCardMove(
+                                currentPlayer,
+                                GameManager.MAX_FOLLOW_UP_CARD_MOVES
+                            )) {
+                                return;
+                            }
+
                             this.turnManager.nextTurn();
 
                             this.updateTurnUI();
@@ -558,6 +567,13 @@ export class GameManager extends Component {
 
                                         if (pendingTransportDecision) {
                                             this.showAirportDecisionUI();
+                                            return;
+                                        }
+
+                                        if (this.continuePendingCardMove(
+                                            currentPlayer,
+                                            GameManager.MAX_FOLLOW_UP_CARD_MOVES
+                                        )) {
                                             return;
                                         }
 
@@ -1180,6 +1196,106 @@ export class GameManager extends Component {
 
         this.tileSystem
             .clearPendingGoToJailMove();
+
+        return true;
+    }
+
+    // Continue only card-triggered moves that follow an already resolved
+    // Chance/Destiny move. Airport and JAIL keep their separate move paths.
+    private continuePendingCardMove(
+        player: PlayerController,
+        remainingMoves: number
+    ): boolean {
+
+        if (!this.tileSystem) {
+            return false;
+        }
+
+        const chanceSteps = this.tileSystem.getPendingChanceMoveSteps();
+        const destinySteps = this.tileSystem.getPendingDestinyMoveSteps();
+        const isChanceMove = chanceSteps !== null;
+        const steps = isChanceMove ? chanceSteps : destinySteps;
+
+        if (steps === null) {
+            return false;
+        }
+
+        if (isChanceMove) {
+            this.tileSystem.clearPendingChanceMove();
+        } else {
+            this.tileSystem.clearPendingDestinyMove();
+        }
+
+        if (remainingMoves <= 0) {
+            console.warn(
+                `[GameManager] Card move chain limit reached for ${player.node.name}; ending this turn to prevent a Chance/Destiny loop.`
+            );
+            return false;
+        }
+
+        const cardName = isChanceMove ? 'Chance' : 'Destiny';
+
+        console.log(
+            `[GameManager] Follow-up ${cardName} MOVE started: ${player.node.name} will move ${steps} tiles.`
+        );
+
+        player.moveBySteps(
+            steps,
+            () => {
+
+                if (!this.tileSystem) {
+                    console.error('[GameManager] TileSystem is missing after a card move.');
+                    return;
+                }
+
+                console.log(
+                    `[GameManager] Resolving landing after follow-up ${cardName} MOVE for ${player.node.name}.`
+                );
+
+                const needsPropertyDecision =
+                    this.tileSystem.resolveLanding(player);
+
+                if (needsPropertyDecision) {
+                    const property = this.tileSystem.getPendingProperty();
+
+                    if (!property || property.price === undefined || !this.propertyPurchaseUI) {
+                        console.error('[GameManager] Property decision after card move is incomplete.');
+                        return;
+                    }
+
+                    this.propertyPurchaseUI.show(property.name, property.price);
+                    console.log(
+                        `[GameManager] Property purchase UI opened after follow-up ${cardName} MOVE for ${property.name}.`
+                    );
+                    return;
+                }
+
+                if (this.tryHandlePendingGoToJailMove(player, `${cardName} card move landing`)) {
+                    return;
+                }
+
+                if (this.tileSystem.getPendingTransportDecision()) {
+                    this.showAirportDecisionUI();
+                    return;
+                }
+
+                if (this.continuePendingCardMove(player, remainingMoves - 1)) {
+                    return;
+                }
+
+                if (!this.turnManager) {
+                    console.error('[GameManager] TurnManager is missing after a card move.');
+                    return;
+                }
+
+                this.turnManager.nextTurn();
+                this.updateTurnUI();
+
+                if (this.rollDiceButton) {
+                    this.rollDiceButton.interactable = true;
+                }
+            }
+        );
 
         return true;
     }
