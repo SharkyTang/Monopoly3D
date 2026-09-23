@@ -476,6 +476,97 @@ export class GameManager extends Component {
                                 return;
                             }
 
+                            // The fixed 32-tile layout lets Destiny -4 land on
+                            // Chance at Tile_15 or Tile_27. Resolve a MOVE card
+                            // drawn there before the turn advances.
+                            const pendingChanceMoveAfterDestiny =
+                                this.tileSystem
+                                    ?.getPendingChanceMoveSteps();
+
+                            if (
+                                pendingChanceMoveAfterDestiny !== null &&
+                                pendingChanceMoveAfterDestiny !== undefined
+                            ) {
+
+                                this.tileSystem
+                                    ?.clearPendingChanceMove();
+
+                                console.log(
+                                    `[GameManager] Chance MOVE after Destiny MOVE started: ${currentPlayer.node.name} will move ${pendingChanceMoveAfterDestiny} extra tiles.`
+                                );
+
+                                currentPlayer.moveBySteps(
+                                    pendingChanceMoveAfterDestiny,
+                                    () => {
+
+                                        console.log(
+                                            `[GameManager] Resolving landing after Chance MOVE following Destiny MOVE for ${currentPlayer.node.name}.`
+                                        );
+
+                                        const needsPropertyDecision =
+                                            this.tileSystem
+                                                ?.resolveLanding(
+                                                    currentPlayer
+                                                ) ?? false;
+
+                                        if (needsPropertyDecision) {
+
+                                            const pendingProperty =
+                                                this.tileSystem
+                                                    ?.getPendingProperty();
+
+                                            if (
+                                                !pendingProperty ||
+                                                pendingProperty.price === undefined ||
+                                                !this.propertyPurchaseUI
+                                            ) {
+
+                                                console.error(
+                                                    '[GameManager] Property decision after Destiny / Chance MOVE is incomplete.'
+                                                );
+
+                                                return;
+                                            }
+
+                                            this.propertyPurchaseUI.show(
+                                                pendingProperty.name,
+                                                pendingProperty.price
+                                            );
+
+                                            return;
+                                        }
+
+                                        if (
+                                            this.tryHandlePendingGoToJailMove(
+                                                currentPlayer,
+                                                'Destiny / Chance MOVE landing'
+                                            )
+                                        ) {
+                                            return;
+                                        }
+
+                                        const pendingTransportDecision =
+                                            this.tileSystem
+                                                ?.getPendingTransportDecision();
+
+                                        if (pendingTransportDecision) {
+                                            this.showAirportDecisionUI();
+                                            return;
+                                        }
+
+                                        this.turnManager.nextTurn();
+                                        this.updateTurnUI();
+
+                                        if (this.rollDiceButton) {
+                                            this.rollDiceButton.interactable =
+                                                true;
+                                        }
+                                    }
+                                );
+
+                                return;
+                            }
+
                             this.turnManager.nextTurn();
 
                             this.updateTurnUI();
