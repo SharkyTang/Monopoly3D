@@ -2041,7 +2041,7 @@
     "_enabled": true,
     "__prefab": null,
     "playerId": 1,
-    "money": 15000,
+    "money": 10000,
     "_id": "b5RwGXHyZO26N9Gdru8OsX"
   },
   {
@@ -2140,7 +2140,7 @@
     "_enabled": true,
     "__prefab": null,
     "playerId": 0,
-    "money": 15000,
+    "money": 10000,
     "_id": "47wGHkquZNTZT5WbShuO5s"
   },
   {
@@ -2154,7 +2154,7 @@
     "_enabled": true,
     "__prefab": null,
     "playerId": 2,
-    "money": 15000,
+    "money": 10000,
     "_id": "88VacKUuxGmIuTq9ZJVZWL"
   },
   {
@@ -2310,7 +2310,7 @@
     "_enabled": true,
     "__prefab": null,
     "playerId": 3,
-    "money": 15000,
+    "money": 10000,
     "_id": "69TgDzoPlLq7KzhMxooRBN"
   },
   {
