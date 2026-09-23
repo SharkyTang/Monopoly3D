@@ -26,6 +26,8 @@ import {
     PlayerController
 } from '../player/PlayerController';
 
+import { TILE_DATABASE } from '../tile/TileDatabase';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManager')
@@ -75,6 +77,11 @@ export class GameManager extends Component {
     }
 
     public rollDiceAndMove(): void {
+
+        if (this.tileSystem?.getPendingTransportDecision()) {
+            console.warn('[GameManager] Roll blocked until the Airport destination is chosen.');
+            return;
+        }
 
         if (!this.diceSystem) {
 
@@ -744,6 +751,18 @@ export class GameManager extends Component {
     }
 
     public onTravelToAirportDestination(): void {
+        this.travelToAirportDestination(0);
+    }
+
+    public onTravelToAirportDestination2(): void {
+        this.travelToAirportDestination(1);
+    }
+
+    public onTravelToAirportDestination3(): void {
+        this.travelToAirportDestination(2);
+    }
+
+    private travelToAirportDestination(selectionIndex: number): void {
 
         if (!this.turnManager) {
 
@@ -805,7 +824,14 @@ export class GameManager extends Component {
 
         const destinationTileIndex =
             pendingTransportDecision
-                .destinationTileIndices[0];
+                .destinationTileIndices[selectionIndex];
+
+        if (destinationTileIndex === undefined) {
+            console.error(
+                `[GameManager] Airport destination choice ${selectionIndex + 1} is invalid.`
+            );
+            return;
+        }
 
         if (
             destinationTileIndex ===
@@ -845,7 +871,7 @@ export class GameManager extends Component {
         if (!paymentSucceeded) {
 
             console.log(
-                `[GameManager] Airport travel not started for ${currentPlayer.node.name}. Stay Here remains available.`
+                `[GameManager] Airport travel not started for ${currentPlayer.node.name}. Destination selection remains open.`
             );
 
             return;
@@ -1167,6 +1193,40 @@ export class GameManager extends Component {
             );
 
             return;
+        }
+
+        const transportTile = this.tileSystem?.getPendingTransportDecision();
+        const destinations = transportTile?.destinationTileIndices;
+
+        if (!transportTile || !destinations || destinations.length !== 3) {
+            console.error('[GameManager] Airport requires exactly three destinations.');
+            return;
+        }
+
+        const title = this.airportPanel.getChildByName('AirportTitle')?.getComponent(Label);
+        const fee = this.airportPanel.getChildByName('TravelCostLabel')?.getComponent(Label);
+        const prompt = this.airportPanel.getChildByName('DestinationLabel')?.getComponent(Label);
+
+        if (!title || !fee || !prompt) {
+            console.error('[GameManager] Airport panel labels are missing.');
+            return;
+        }
+
+        title.string = transportTile.name;
+        fee.string = `Travel Cost: ${transportTile.travelCost}`;
+        prompt.string = 'Choose a destination';
+
+        for (let i = 0; i < destinations.length; i++) {
+            const destination = TILE_DATABASE[destinations[i]];
+            const button = this.airportPanel.getChildByName(`DestinationButton_${i + 1}`);
+            const label = button?.getChildByName('Label')?.getComponent(Label);
+
+            if (!destination || !button || !label) {
+                console.error(`[GameManager] Airport destination button ${i + 1} is incomplete.`);
+                return;
+            }
+
+            label.string = destination.name;
         }
 
         this.airportPanel.active =

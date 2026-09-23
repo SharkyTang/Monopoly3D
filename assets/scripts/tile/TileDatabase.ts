@@ -56,7 +56,7 @@ export const TILE_DATABASE: TileData[] = [
         type: TileType.SPECIAL,
         specialType: SpecialType.TRANSPORT,
         travelCost: 500,
-        destinationTileIndices: [1]
+        destinationTileIndices: [1, 12, 26]
     },
     {
         id: 7,
@@ -176,7 +176,7 @@ export const TILE_DATABASE: TileData[] = [
         type: TileType.SPECIAL,
         specialType: SpecialType.TRANSPORT,
         travelCost: 500,
-        destinationTileIndices: [25]
+        destinationTileIndices: [25, 21, 17]
     },
     {
         id: 23,

@@ -1179,18 +1179,6 @@ export class TileSystem extends Component {
         const travelCost =
             transportTile.travelCost;
 
-        if (
-            registeredPlayer.money <
-            travelCost
-        ) {
-
-            console.log(
-                `[SpecialSystem] ${player.node.name} cannot afford Airport travel. money=${registeredPlayer.money}, cost=${travelCost}.`
-            );
-
-            return false;
-        }
-
         const moneyBefore =
             registeredPlayer.money;
 
